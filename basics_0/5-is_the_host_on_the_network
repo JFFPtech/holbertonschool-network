@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 # checks if a host is on the network
 
-if [ $# -ne 1 ]; then
+if [ $# -eq 0 ]; then
     echo "Usage: $0 {IP_ADDRESS}"
     exit 1
 fi
