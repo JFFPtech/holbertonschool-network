@@ -1,15 +1,9 @@
 #!/usr/bin/env bash
 # checks if a host is on the network
 
-if [ $1 ]
-then
-    ping -c 1 $1
-    if [ $? -eq 0 ]
-    then
-        echo "UP"
+if [ "$#" -ne 1 ]; then
+    echo "Usage: $0 {IP_ADDRESS}"
     else
-        echo "DOWN"
-    fi
-else
-    echo "Usage: 5-is_the_host_on_the_network {IP_ADDRESS}"
+    ping -c 5 $1 > /dev/null
+    exit 1
 fi
